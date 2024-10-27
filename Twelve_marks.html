@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twelve Marks Entry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1,h2 {
+            text-align: center;
+            color: #070707;
+            white-space: nowrap; /* Ensures the heading stays in a single line */
+        }
+
+        #twelveMarksForm {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form id="twelveMarksForm" action="Twelve_marks.php" method="POST">
+        <h1>Enter 2nd PU Details</h1>
+        
+        <div>
+            <label for="studiedState">2nd PU Studied State:</label>
+            <input type="text" id="studiedState" name="studiedState" required>
+        </div>
+
+        <div>
+            <label for="collegeNamePlace">2nd PU College Name and Place:</label>
+            <input type="text" id="collegeNamePlace" name="collegeNamePlace" required>
+        </div>
+
+        <div>
+            <h2>Enter Marks Obtained</h2>
+            <label for="english">English:</label>
+            <input type="number" id="english" name="english" required>
+        </div>
+
+        <div>
+            <label for="language">Language:</label>
+            <input type="number" id="language" name="language" required>
+        </div>
+
+        <div>
+            <label for="physics">Physics:</label>
+            <input type="number" id="physics" name="physics" required>
+        </div>
+
+        <div>
+            <label for="chemistry">Chemistry:</label>
+            <input type="number" id="chemistry" name="chemistry" required>
+        </div>
+
+        <div>
+            <label for="mathematics">Mathematics:</label>
+            <input type="number" id="mathematics" name="mathematics" required>
+        </div>
+
+        <div>
+            <label for="biology">Biology:</label>
+            <input type="number" id="biology" name="biology">
+        </div>
+
+        <div>
+            <label for="computerScience">Computer Science:</label>
+            <input type="number" id="computerScience" name="computerScience">
+        </div>
+
+        <div>
+            <label for="electronics">Electronics:</label>
+            <input type="number" id="electronics" name="electronics">
+        </div>
+
+        <div>
+            <label for="electrical">Electrical:</label>
+            <input type="number" id="electrical" name="electrical">
+        </div>
+
+        <div>
+            <label for="statistics">Statistics:</label>
+            <input type="number" id="statistics" name="statistics">
+        </div>
+
+        <div>
+            <label for="informationTechnology">Information Technology:</label>
+            <input type="number" id="informationTechnology" name="informationTechnology">
+        </div>
+
+        <div>
+            <label for="totalMarks">Total Marks Obtained:</label>
+            <input type="number" id="totalMarks" name="totalMarks" required>
+        </div>
+
+        <div>
+            <label for="maximumMarks">Maximum Marks:</label>
+            <input type="number" id="maximumMarks" name="maximumMarks" required>
+        </div>
+
+        <div>
+            <label for="percentage">Percentage:</label>
+            <input type="text" id="percentage" name="percentage" disabled>
+        </div>
+
+        <!-- Hidden AdharNumber field -->
+        <input type="hidden" id="adharNumber" name="adharNumber" value="">
+
+        <!-- Save and Submit button -->
+        <input type="button" value="Save and Next" onclick="submitForm()">
+    </form>
+
+    <script>
+        function submitForm() {
+            // Code to submit the form
+            document.getElementById("twelveMarksForm").submit();
+        }
+    </script>
+</body>
+</html>
+
+    <script>
+        document.getElementById('totalMarks').addEventListener('input', calculatePercentage);
+        document.getElementById('maximumMarks').addEventListener('input', calculatePercentage);
+
+        function calculatePercentage() {
+            let totalMarks = parseFloat(document.getElementById('totalMarks').value);
+            let maximumMarks = parseFloat(document.getElementById('maximumMarks').value);
+
+            if (totalMarks && maximumMarks) {
+                let percentage = (totalMarks / maximumMarks) * 100;
+                document.getElementById('percentage').value = percentage.toFixed(2) + '%';
+            } else {
+                document.getElementById('percentage').value = ''; // Clear the percentage field if total marks or maximum marks are not filled
+            }
+        }
+
+        function submitForm() {
+            document.getElementById('adharNumber').value = '1234567890'; // Set a sample AdharNumber
+            document.getElementById('twelveMarksForm').submit(); // Submit the form
+        }
+    </script>
+</body>
+</html>

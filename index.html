@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('bg2.jpg'); /* Replace 'background.jpg' with your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #000; /* Changed font color to black */
+        }
+        .heading {
+            font-size: 120px;
+            font-weight: bold;
+            margin-top: 100px;
+        }
+        h2 {
+            font-size: 90px; /* Increased size of h2 */
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Student Registration Portal</h1>
+    <h2>Welcome to Home Page</h2>
+    <button onclick="redirectToStudent()" class="btn">Click To Register</button>
+    <button onclick="redirectToView()" class="btn">View Details</button>
+    <a href="Admin.php" class="btn">Admin Login</a> <!-- Add Admin Login button -->
+    
+    <script>
+        function redirectToStudent() {
+            window.location.href = 'student.html'; /* Replace 'student_registration.php' with your page URL */
+        }
+
+        function redirectToView() {
+            window.location.href = 'view.php'; /* Replace 'view.php' with your page URL */
+        }
+    </script>
+</body>
+</html>

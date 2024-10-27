@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: inline-block;
+            width: 150px; /* Set the width for labels */
+            text-align: left;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="email"], select, input[type="date"] {
+            width: 300px; /* Set the width for input fields */
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter Personal Details</h2>
+    <form id="registrationForm" action="student_form.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="fathersName">Father's Name:</label>
+        <input type="text" id="fathersName" name="fathersName" required><br>
+
+        <label for="mothersName">Mother's Name:</label>
+        <input type="text" id="mothersName" name="mothersName" required><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required max="<?php echo date('Y-m-d'); ?>"><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br>
+
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category"><br>
+
+        <label for="religion">Religion:</label>
+        <input type="text" id="religion" name="religion"><br>
+
+        <label for="caste">Caste:</label>
+        <input type="text" id="caste" name="caste"><br>
+
+        <label for="emailID">Email ID:</label>
+        <input type="email" id="emailID" name="emailID"><br>
+
+        <label for="state">SSLC Studied State:</label>
+        <input type="text" id="state" name="state"><br>
+
+        <label for="studyPlace">SSLC Studied Place:</label>
+        <select id="studyPlace" name="studyPlace" required>
+            <option value="Urban">Urban</option>
+            <option value="Rural">Rural</option>
+        </select><br>
+
+        <label for="study10Medium">SSLC Medium of Instruction:</label>
+        <input type="text" id="study10Medium" name="study10Medium"><br>
+
+        <label for="adharNumber">Adhar Number:</label>
+        <input type="text" id="adharNumber" name="adharNumber"><br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber"><br>
+
+        <input type="submit" value="Save and Next">
+    </form>
+
+    <script>
+        // JavaScript to set max date for Date of Birth field
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementById("dob").setAttribute('max', today);
+    </script>
+</body>
+</html>

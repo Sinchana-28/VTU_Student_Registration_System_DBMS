@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Enrollment Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0b0a0a;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Enrolled College Deatils</h1>
+    <form action="College.php" method="POST">
+        <label for="collegeName">College Name:</label>
+        <input type="text" id="collegeName" name="collegeName" required>
+    
+        <label for="collegeID">College ID:</label>
+        <input type="number" id="collegeID" name="collegeID" required>
+    
+        <label for="courseName">Course Name:</label>
+        <input type="text" id="courseName" name="courseName" required>
+    
+        <label for="durationInYears">Duration in Years:</label>
+        <input type="number" id="durationInYears" name="durationInYears" required>
+    
+        <label for="seatType">Seat Type:</label>
+        <select id="seatType" name="seatType" required>
+            <option value="government allotted">Government Allotted</option>
+            <option value="management">Management</option>
+        </select>
+    
+        <label for="fees">Fees Amount:</label>
+        <input type="number" step=".01" id="fees" name="fees" required>
+    
+        <!-- Add a hidden input field for AdharNumber -->
+        <input type="hidden" name="adharNumber" value="<?php echo $_SESSION['AdharNumber']; ?>">
+    
+        <input type="submit" value="Save and Next">
+    </form>          
+</html>

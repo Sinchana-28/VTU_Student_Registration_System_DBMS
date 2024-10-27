@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ten Marks Entry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0b0a0a;
+        }
+
+        #marksForm {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 15px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter SSLC Marks Deatils</h1>
+    <form id="marksForm" action="TenthMarks.php" method="POST">
+        
+        <label for="totalMarks">Total Marks Obtained:</label>
+        <input type="number" id="totalMarks" name="totalMarks" value="" required>
+
+        <label for="maximumMarks">Maximum Marks:</label>
+        <input type="number" id="maximumMarks" name="maximumMarks" value="" required>
+
+        <label for="percentage">Percentage:</label>
+        <input type="text" id="percentage" name="percentage" value="" disabled>
+
+        <!-- Save and Submit button -->
+        <input type="submit" value="Save and Next">
+    </form>
+</body>
+</html>
+
+
+    <script>
+        document.getElementById('totalMarks').addEventListener('input', calculatePercentage);
+        document.getElementById('maximumMarks').addEventListener('input', calculatePercentage);
+
+        function calculatePercentage() {
+            let totalMarks = parseFloat(document.getElementById('totalMarks').value);
+            let maximumMarks = parseFloat(document.getElementById('maximumMarks').value);
+
+            if (totalMarks && maximumMarks) {
+                let percentage = (totalMarks / maximumMarks) * 100;
+                document.getElementById('percentage').value = percentage.toFixed(2) + '%';
+            } else {
+                document.getElementById('percentage').value = ''; // Clear the percentage field if total marks or maximum marks are not filled
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+}
+
+.full-screen-container {
+    position: relative;
+    text-align: center;
+    height: 80vh; /* Set the height to 80% of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top of the container */
+}
+
+.sit-logo {
+    width: 100%; /* Ensure the image covers the full width of the screen */
+    max-height: 60vh; /* Set the maximum height of the image to 60% of the viewport height */
+}
+
+.overlay {
+    margin-top: 10px; /* Add margin between the logo and the button */
+}
+
+.registration-button {
+    padding: 15px 30px; /* Increase padding for the button */
+    font-size: 1.2em; /* Increase font size for the button */
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.registration-button:hover {
+    background-color: #45a049;
+}
+
+body{
+    font-family: "Times New Roman", serif;
+    background-color: #A9A9A9; /* DarkGrey background color */
+    padding: 20px;
+    margin: 0;
+    color: #000000; /* Dark black text color for better contrast */
+}
+
+form{
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #A9A9A9; /* Match form background color with body */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label{
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    background-color: #D3D3D3; /* LighterGrey background color for input boxes */
+    color: #000000; /* Dark black text color for input boxes */
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button[type="submit"]{
+    background-color: #008CBA; /* Blue color */
+    color: #fff; /* White text */
+}
+
+.hidden{
+    display: none;
+}
+
+#navButtons{
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+/* Style the "Previous" button */
+#navButtons button{
+    background-color: #A9A9A9; /* DarkGrey background color */
+    color: #fff; /* White text */
+    margin-right: 10px;
+}
